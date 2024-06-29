@@ -38,9 +38,15 @@ class MainActivity : AppCompatActivity() {
             placeModel()
         }
 
-        videoNode = VideoNode(sceneView.engine, scaleToUnits = 0.7f, centerOrigin = Position(y = -4f), glbFileLocation = "models/plane.glb", player = mediaPlayer, onLoaded = { _, _ ->
-            mediaPlayer.start()
-        })
+        videoNode = VideoNode(
+            sceneView.engine,
+            scaleToUnits = 0.7f,
+            centerOrigin = Position(y = -4f),
+            glbFileLocation = "models/plane.glb",
+            player = mediaPlayer,
+            onLoaded = { _, _ ->
+                mediaPlayer.start()
+            })
 
         modelNode = ArModelNode(sceneView.engine, PlacementMode.INSTANT).apply {
             loadModelGlbAsync(
